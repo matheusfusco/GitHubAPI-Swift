@@ -16,6 +16,8 @@
 		5ECD4E9620667BA40017C7C4 /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD4E9520667BA40017C7C4 /* PullRequest.swift */; };
 		5ECD4E9820667BAE0017C7C4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD4E9720667BAE0017C7C4 /* Repository.swift */; };
 		5ECD4E9A20667BCF0017C7C4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD4E9920667BCF0017C7C4 /* APIManager.swift */; };
+		5ECD4E9C20668F7F0017C7C4 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD4E9B20668F7F0017C7C4 /* Reach.swift */; };
+		5ECD4E9E206699130017C7C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD4E9D206699130017C7C4 /* Constants.swift */; };
 		ADFF662FBD4078AE9DADD5C1 /* Pods_GitHubAPI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363F7DABD77B4FF97DC2CAFB /* Pods_GitHubAPI_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		5ECD4E9520667BA40017C7C4 /* PullRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 		5ECD4E9720667BAE0017C7C4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5ECD4E9920667BCF0017C7C4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5ECD4E9B20668F7F0017C7C4 /* Reach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		5ECD4E9D206699130017C7C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AD818D400F1F4AC3C3CB82C5 /* Pods-GitHubAPI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAPI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubAPI-Swift/Pods-GitHubAPI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		CBBA3697590A05242C907A81 /* Pods-GitHubAPI-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAPI-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubAPI-Swift/Pods-GitHubAPI-Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +106,8 @@
 		5ECD4E8D206678900017C7C4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5ECD4E9120667B860017C7C4 /* PullRequestTableViewController.swift */,
 				5ECD4E9320667B9A0017C7C4 /* RepositoryListViewController.swift */,
+				5ECD4E9120667B860017C7C4 /* PullRequestTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -111,6 +115,8 @@
 		5ECD4E8E206678950017C7C4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5ECD4E9B20668F7F0017C7C4 /* Reach.swift */,
+				5ECD4E9D206699130017C7C4 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -287,8 +293,10 @@
 				5ECD4E9220667B860017C7C4 /* PullRequestTableViewController.swift in Sources */,
 				5ECD4E7A206678790017C7C4 /* AppDelegate.swift in Sources */,
 				5ECD4E9820667BAE0017C7C4 /* Repository.swift in Sources */,
+				5ECD4E9C20668F7F0017C7C4 /* Reach.swift in Sources */,
 				5ECD4E9620667BA40017C7C4 /* PullRequest.swift in Sources */,
 				5ECD4E9420667B9A0017C7C4 /* RepositoryListViewController.swift in Sources */,
+				5ECD4E9E206699130017C7C4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

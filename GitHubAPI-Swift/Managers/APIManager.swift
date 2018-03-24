@@ -7,7 +7,40 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class APIManager: NSObject {
-
+    // MARK: - Lets and Vars
+    var header : HTTPHeaders = ["content-type" : "application/json"]
+    
+    
+    // MARK: - Requests
+    func GET (endpoint: String, request: [String: Any]?, success: @escaping(JSON) -> Void, failure: @escaping(NSError) -> Void) {
+        
+        switch Reach().connectionStatus() {
+        case .offline:
+            failure(NSError(domain: "Sem conexão com a internet", code: 0, userInfo: nil))
+            return
+        case .unknown:
+            failure(NSError(domain: "Erro desconhecido.", code: 500, userInfo: nil))
+            return
+        default:
+            break
+        }
+        
+        
+        Alamofire.request(Constants.URLs.baseURL + endpoint, method: .get, parameters: request, encoding: URLEncoding.default, headers: self.header)
+            .responseJSON(completionHandler: { (response) in
+                switch (response.result) {
+                    case .success:
+                        let json = JSON(data: response.data!)
+                        success(json)
+                    
+                    case .failure:
+                        let error = NSError(domain: "Erro desconhecido", code:response.response?.statusCode ?? 0, userInfo: nil)
+                        failure(error)
+                }
+            })
+    }
 }
