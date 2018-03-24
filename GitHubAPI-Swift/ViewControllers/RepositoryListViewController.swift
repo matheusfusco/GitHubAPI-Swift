@@ -12,6 +12,8 @@ import TBEmptyDataSet
 class RepositoryListViewController: UIViewController {
 
     //MARK: - Lets and Vars
+    var repositories: [Repository] = []
+    var selectedRepository: Repository?
     
     //MARK: - IBOutlets
     @IBOutlet weak var repositoryTableView: UITableView!
@@ -21,6 +23,7 @@ class RepositoryListViewController: UIViewController {
         super.viewDidLoad()
         self.configVariables()
         self.configViews()
+        self.fetchRepositories()
     }
     
     //MARK: - Custom Methods
@@ -32,6 +35,15 @@ class RepositoryListViewController: UIViewController {
         repositoryTableView.tableFooterView = UIView()
     }
 
+    func fetchRepositories() {
+        RepositoryManager.getRepositories(success: { (repos) in
+            self.repositories = repos
+            self.repositoryTableView.reloadData()
+        }) { (error) in
+            
+        }
+    }
+    
     //MARK: - Memory Management
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,7 +52,11 @@ class RepositoryListViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if let prVC = segue.destination as? PullRequestTableViewController {
+            if let repo = selectedRepository {
+                prVC.repositoryToLoad = repo
+            }
+        }
     }
 
 }
@@ -48,7 +64,9 @@ class RepositoryListViewController: UIViewController {
 //MARK: - UITableView Delegate & DataSource Methods
 extension RepositoryListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedRepository = self.repositories[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: Constants.SegueIdentifiers.showPullRequests, sender: self)
     }
 }
 
@@ -59,7 +77,7 @@ extension RepositoryListViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.repositories.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

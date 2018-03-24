@@ -12,11 +12,11 @@ import SwiftyJSON
 
 class APIManager: NSObject {
     // MARK: - Lets and Vars
-    var header : HTTPHeaders = ["content-type" : "application/json"]
+    static var header : HTTPHeaders = ["content-type" : "application/json"]
     
     
     // MARK: - Requests
-    func GET (endpoint: String, request: [String: Any]?, success: @escaping(JSON) -> Void, failure: @escaping(NSError) -> Void) {
+    static func GET (endpoint: String, parameters: [String: Any]?, success: @escaping(JSON) -> Void, failure: @escaping(NSError) -> Void) {
         
         switch Reach().connectionStatus() {
         case .offline:
@@ -29,17 +29,18 @@ class APIManager: NSObject {
             break
         }
         
+        let url = URL(string: Constants.URLs.baseURL + endpoint)!
         
-        Alamofire.request(Constants.URLs.baseURL + endpoint, method: .get, parameters: request, encoding: URLEncoding.default, headers: self.header)
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: self.header)
             .responseJSON(completionHandler: { (response) in
                 switch (response.result) {
-                    case .success:
-                        let json = JSON(data: response.data!)
-                        success(json)
+                case .success:
+                    let json = JSON(data: response.data!)
+                    success(json)
                     
-                    case .failure:
-                        let error = NSError(domain: "Erro desconhecido", code:response.response?.statusCode ?? 0, userInfo: nil)
-                        failure(error)
+                case .failure:
+                    let error = NSError(domain: "Erro desconhecido", code:response.response?.statusCode ?? 0, userInfo: nil)
+                    failure(error)
                 }
             })
     }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pullRequestCell" rowHeight="140" id="16Y-HT-IV9" customClass="PullRequestTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pullRequestCell" rowHeight="140" id="16Y-HT-IV9">
                                 <rect key="frame" x="0.0" y="1" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16Y-HT-IV9" id="tXW-r1-cHY">
@@ -76,13 +76,6 @@
                                         <constraint firstItem="hXB-m6-DRh" firstAttribute="top" secondItem="l0d-Eg-Xtn" secondAttribute="bottom" constant="8" id="xgt-mz-Yan"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="pullRequestDate" destination="aPb-yv-N6p" id="Xbu-qN-NYN"/>
-                                    <outlet property="pullRequestDescription" destination="hXB-m6-DRh" id="pxE-0L-kaK"/>
-                                    <outlet property="pullRequestOwner" destination="ii1-BO-csC" id="S3n-5v-Syp"/>
-                                    <outlet property="pullRequestOwnerPhoto" destination="QUk-hc-I9n" id="cJO-HM-2cz"/>
-                                    <outlet property="pullRequestTitle" destination="l0d-Eg-Xtn" id="w7K-l4-Z2y"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -231,7 +224,7 @@
                     <connections>
                         <outlet property="repositoryTableView" destination="tcg-jz-KKC" id="nDs-Ac-qYL"/>
                         <outlet property="searchDisplayController" destination="wTF-6p-9p9" id="Q5K-lP-jde"/>
-                        <segue destination="2k0-xJ-cvo" kind="show" identifier="loadRepositoryPRs" id="9Kd-hx-gCS">
+                        <segue destination="2k0-xJ-cvo" kind="show" identifier="showRepositoryPRs" id="9Kd-hx-gCS">
                             <nil key="action"/>
                         </segue>
                     </connections>

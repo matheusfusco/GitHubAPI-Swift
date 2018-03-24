@@ -27,4 +27,8 @@ class Constants {
         static let repository = "repositoryCell"
         static let pullRequest = "pullRequestCell"
     }
+    
+    struct SegueIdentifiers {
+        static let showPullRequests = "showRepositoryPRs"
+    }
 }
