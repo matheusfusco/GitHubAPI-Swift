@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PullRequestTableViewController: UITableViewController {
+final class PullRequestTableViewController: UITableViewController {
 
     //MARK: - Lets and Vars
+    private var pullRequests: [PullRequest] = []
     var repositoryToLoad: Repository?
-    var pullRequests: [PullRequest] = []
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -23,21 +23,24 @@ class PullRequestTableViewController: UITableViewController {
     }
     
     //MARK: - Custom Methods
-    func configVariables() {
+    private func configVariables() {
         
     }
     
-    func configViews() {
+    private func configViews() {
         self.tableView.tableFooterView = UIView()
     }
     
-    func fetchPullRequests() {
+    private func fetchPullRequests() {
         if let repository = repositoryToLoad {
+            self.title = "\(repository.full_name)"
+            self.showLoading()
             PullRequestManager.getPullRequests(from: repository, success: { (pRequests) in
+                self.dismissLoading()
                 self.pullRequests = pRequests
                 self.tableView.reloadData()
             }) { (error) in
-                
+                self.dismissLoading()
             }
         }
     }
@@ -58,7 +61,8 @@ class PullRequestTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.pullRequest, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.pullRequest, for: indexPath) as! PullRequestTableViewCell
+        cell.pullRequest = self.pullRequests[indexPath.row]
         return cell
     }
     

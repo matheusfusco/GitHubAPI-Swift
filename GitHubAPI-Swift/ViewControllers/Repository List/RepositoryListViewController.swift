@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import TBEmptyDataSet
 
-class RepositoryListViewController: UIViewController {
+final class RepositoryListViewController: UIViewController {
 
     //MARK: - Lets and Vars
-    var repositories: [Repository] = []
+    private var repositories: [Repository] = []
     var selectedRepository: Repository?
     
     //MARK: - IBOutlets
@@ -27,20 +26,22 @@ class RepositoryListViewController: UIViewController {
     }
     
     //MARK: - Custom Methods
-    func configVariables() {
+    private func configVariables() {
         
     }
     
-    func configViews() {
+    private func configViews() {
         repositoryTableView.tableFooterView = UIView()
     }
 
-    func fetchRepositories() {
+    private func fetchRepositories() {
+        self.showLoading()
         RepositoryManager.getRepositories(success: { (repos) in
+            self.dismissLoading()
             self.repositories = repos
             self.repositoryTableView.reloadData()
         }) { (error) in
-            
+            self.dismissLoading()
         }
     }
     
@@ -72,7 +73,8 @@ extension RepositoryListViewController : UITableViewDelegate {
 
 extension RepositoryListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.repository, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.repository, for: indexPath) as! RepositoryTableViewCell
+        cell.repository = self.repositories[indexPath.row]
         return cell
     }
     

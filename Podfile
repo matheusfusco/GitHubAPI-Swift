@@ -7,7 +7,8 @@ target 'GitHubAPI-Swift' do
 
   # Pods for GitHubAPI-Swift
 	pod 'Alamofire'
-	pod 'SDWebImage'
+    pod 'Kingfisher'
 	pod 'TBEmptyDataSet'
 	pod 'SwiftyJSON'
+    pod 'MBProgressHUD'
 end
