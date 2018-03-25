@@ -11,4 +11,5 @@ target 'GitHubAPI-Swift' do
 	pod 'TBEmptyDataSet'
 	pod 'SwiftyJSON'
     pod 'MBProgressHUD'
+    pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
 end

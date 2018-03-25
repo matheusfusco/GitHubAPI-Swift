@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import UIScrollView_InfiniteScroll
 
 final class RepositoryListViewController: UIViewController {
 
     //MARK: - Lets and Vars
     private var repositories: [Repository] = []
-    var selectedRepository: Repository?
+    private var selectedRepository: Repository?
+    private var page: Int = 1
     
     //MARK: - IBOutlets
     @IBOutlet weak var repositoryTableView: UITableView!
@@ -32,16 +34,24 @@ final class RepositoryListViewController: UIViewController {
     
     private func configViews() {
         repositoryTableView.tableFooterView = UIView()
+        repositoryTableView.addInfiniteScroll { (tableView) in
+            self.fetchRepositories()
+        }
     }
 
     private func fetchRepositories() {
         self.showLoading()
-        RepositoryManager.getRepositories(success: { (repos) in
+        RepositoryManager.getRepositories(pageIndex: page, success: { (repos) in
+            self.page += 1
             self.dismissLoading()
-            self.repositories = repos
+            for repo in repos {
+                self.repositories.append(repo)
+            }
             self.repositoryTableView.reloadData()
+            self.repositoryTableView.finishInfiniteScroll()
         }) { (error) in
             self.dismissLoading()
+            self.repositoryTableView.finishInfiniteScroll()
         }
     }
     

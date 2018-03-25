@@ -24,10 +24,10 @@
                                 <rect key="frame" x="0.0" y="1" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16Y-HT-IV9" id="tXW-r1-cHY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="751" text="Título do pull request" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0d-Eg-Xtn">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="751" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="751" text="Título do pull request" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0d-Eg-Xtn">
                                             <rect key="frame" x="16" y="11" width="343" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -117,17 +117,17 @@
                                         <rect key="frame" x="0.0" y="1" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="opR-cc-5Ar" id="X7c-7d-eMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="126.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="751" text="Nome do Repositório" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojY-6M-4Ad">
-                                                    <rect key="frame" x="95" y="11" width="272" height="20.5"/>
+                                                    <rect key="frame" x="103" y="11" width="264" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKC-xV-uRW">
-                                                    <rect key="frame" x="95" y="39.5" width="265" height="38.5"/>
+                                                    <rect key="frame" x="103" y="39.5" width="257" height="38.5"/>
                                                     <string key="text">Descrição do repositório lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices turpis tempus elit ultrices elementum. Sed euismod enim sit amet sodales auctor. Ut pellentesque dolor nisl, sed elementum justo bibendum.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -141,13 +141,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SB4-0r-gw8">
-                                                    <rect key="frame" x="19" y="86" width="68" height="18"/>
+                                                    <rect key="frame" x="17" y="86" width="68" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBo-og-wx4">
-                                                    <rect key="frame" x="95" y="86" width="265" height="30"/>
+                                                    <rect key="frame" x="103" y="86" width="257" height="30"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gitFork" translatesAutoresizingMaskIntoConstraints="NO" id="KKq-Md-7qE">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -199,18 +199,19 @@
                                                 <constraint firstAttribute="trailing" secondItem="bKC-xV-uRW" secondAttribute="trailing" constant="15" id="BXU-kF-iUW"/>
                                                 <constraint firstItem="bKC-xV-uRW" firstAttribute="top" secondItem="ojY-6M-4Ad" secondAttribute="bottom" constant="8" id="EeS-Kg-cYu"/>
                                                 <constraint firstItem="cBo-og-wx4" firstAttribute="top" secondItem="bKC-xV-uRW" secondAttribute="bottom" constant="8" id="FQU-mv-lyb"/>
-                                                <constraint firstItem="bKC-xV-uRW" firstAttribute="leading" secondItem="SB4-0r-gw8" secondAttribute="trailing" constant="8" id="Mje-u1-vef"/>
+                                                <constraint firstItem="bKC-xV-uRW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SB4-0r-gw8" secondAttribute="trailing" constant="16" id="MA7-IS-mI8"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SB4-0r-gw8" secondAttribute="bottom" constant="8" id="PFn-VL-DsG"/>
-                                                <constraint firstItem="bKC-xV-uRW" firstAttribute="leading" secondItem="QoR-26-31r" secondAttribute="trailing" constant="8" id="Pc1-xc-H5d"/>
+                                                <constraint firstItem="bKC-xV-uRW" firstAttribute="leading" secondItem="QoR-26-31r" secondAttribute="trailing" constant="16" id="Pc1-xc-H5d"/>
                                                 <constraint firstAttribute="trailing" secondItem="ojY-6M-4Ad" secondAttribute="trailing" constant="8" id="SQR-MM-WzV"/>
                                                 <constraint firstItem="QoR-26-31r" firstAttribute="top" secondItem="X7c-7d-eMi" secondAttribute="top" constant="11" id="SdQ-Yz-I1i"/>
                                                 <constraint firstAttribute="bottom" secondItem="cBo-og-wx4" secondAttribute="bottom" constant="10.5" id="Yhq-E4-Hzo"/>
-                                                <constraint firstItem="ojY-6M-4Ad" firstAttribute="leading" secondItem="QoR-26-31r" secondAttribute="trailing" constant="8" id="ZSC-zs-pCM"/>
+                                                <constraint firstItem="ojY-6M-4Ad" firstAttribute="leading" secondItem="QoR-26-31r" secondAttribute="trailing" constant="16" id="ZSC-zs-pCM"/>
+                                                <constraint firstItem="SB4-0r-gw8" firstAttribute="centerX" secondItem="QoR-26-31r" secondAttribute="centerX" id="eMY-oG-hQE"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eFw-er-pee" secondAttribute="trailing" constant="8" id="hRd-TL-ej4"/>
                                                 <constraint firstItem="cBo-og-wx4" firstAttribute="trailing" secondItem="bKC-xV-uRW" secondAttribute="trailing" id="kyt-Vi-I3c"/>
+                                                <constraint firstItem="SB4-0r-gw8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X7c-7d-eMi" secondAttribute="leading" constant="16" id="lc2-Jh-oVs"/>
                                                 <constraint firstItem="QoR-26-31r" firstAttribute="leading" secondItem="X7c-7d-eMi" secondAttribute="leading" constant="15" id="qrp-ll-0EU"/>
                                                 <constraint firstItem="cBo-og-wx4" firstAttribute="leading" secondItem="bKC-xV-uRW" secondAttribute="leading" id="w6S-cE-edS"/>
-                                                <constraint firstItem="SB4-0r-gw8" firstAttribute="leading" secondItem="X7c-7d-eMi" secondAttribute="leading" constant="19" id="xUf-1B-9dS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -238,7 +239,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="udQ-lS-TUS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="GitHUB" id="QAB-3S-DAz"/>
+                    <navigationItem key="navigationItem" title="GitHUB" id="QAB-3S-DAz">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fPV-y8-jgn"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="repositoryTableView" destination="tcg-jz-KKC" id="nDs-Ac-qYL"/>
                         <outlet property="searchDisplayController" destination="wTF-6p-9p9" id="Q5K-lP-jde"/>

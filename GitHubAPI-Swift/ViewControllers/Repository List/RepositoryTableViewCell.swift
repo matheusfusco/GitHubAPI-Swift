@@ -19,8 +19,6 @@ class RepositoryTableViewCell: UITableViewCell {
             self.repositoryOwnerLabel.text = repository?.ownerUsername
             self.numberOfForksLabel.text = "\((repository?.numberOfForks)!)"
             self.numberOfStarsLabel.text = "\((repository?.numberOfStars)!)"
-//            self.repositoryOwnerPhotoImageView.kf.setImage(with: URL(string: "\((repository?.ownerPhoto)!)")!)
-            
             self.repositoryOwnerPhotoImageView.kf.setImage(with: URL(string: "\((repository?.ownerPhoto)!)"), placeholder: UIImage(named: "userPhoto"), options: nil, progressBlock: nil, completionHandler: nil)
         }
     }
@@ -28,13 +26,9 @@ class RepositoryTableViewCell: UITableViewCell {
     //MARK: - IBOutlets
     @IBOutlet weak var repositoryNameLabel: UILabel!
     @IBOutlet weak var repositoryDescriptionLabel: UILabel!
-    
     @IBOutlet weak var repositoryOwnerPhotoImageView: UIImageView!
-    
     @IBOutlet weak var repositoryOwnerLabel: UILabel!
-    
     @IBOutlet weak var numberOfForksLabel: UILabel!
-    
     @IBOutlet weak var numberOfStarsLabel: UILabel!
     
     //MARK: - Life cycle

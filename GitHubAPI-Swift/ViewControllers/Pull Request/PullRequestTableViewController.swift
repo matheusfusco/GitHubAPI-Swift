@@ -77,5 +77,6 @@ final class PullRequestTableViewController: UITableViewController {
     // MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        UIApplication.shared.open(URL(string: "\(pullRequests[indexPath.row].html_url)")!, options: [:], completionHandler: nil)
     }
 }
